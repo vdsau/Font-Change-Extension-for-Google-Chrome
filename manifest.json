@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Arial Font",
+    "description": "Заменяет шрифт сайта на Arial",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "declarativeContent"
+    ],
+    "background": {
+        "scripts": [
+            "extensionScript.js"
+        ],
+        "persistent": false
+    },
+    "version": "1.0",
+    "browser_action": {
+        "default_popup": "layout.html",
+        "default_title": "Arial Extension",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "sitePageScript.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "offline_enabled": true
+}
